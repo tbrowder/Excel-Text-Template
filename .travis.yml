@@ -1,12 +1,13 @@
-os:
-  - linux
-  - osx
-language: perl6
-perl6:
-  - latest
-install:
-  - rakudobrew build zef
-  - zef install --deps-only --/test .
+language: minimal
+
+services: docker
+
+before_install:
+- docker pull tonyodell/rakudo-nightly:latest
+
 script:
-  - PERL6LIB=$PWD/lib prove -e perl6 -vr --ext .t --ext .t6 --ext .rakutest t
-sudo: false
+- docker run
+  -v $(pwd):/tmp/test:rw
+  -w /tmp/test
+  tonyodell/rakudo-nightly:latest
+  bash -c 'apt-get update; apt-get install -y ca-certificates; zef install -v --deps-only . && zef test .'

@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/tbrowder/Excel-Text-Template-Raku.svg?branch=master)](https://travis-ci.com/tbrowder/Excel-Text-Template-Raku)
+
 # Excel::Text::Template
 
 Use a text template to generate an 'Excel'
@@ -8,21 +10,56 @@ Use a text template to generate an 'Excel'
 This module provides the capability of using a text template
 to generate an Excel file. It is a WIP and has no working code
 at the moment. If you are interested in the concept, please
-star and follow the project and file an issue.
+star the project , follow it, and file an issue.
 
-The project uses several Perl modules which will have to
-be installed for the distro to work.
+The project will use several Perl modules which will have to
+be installed for the distro to work (I use `cpanm` for that):
 
-## GENESIS 
++ Perl modules required:
 
+    + `Excel::Writer::XSLX`
+    + `Spreadsheet::XLSX`
 
-## AUTHOR
+## GENESIS
 
-Tom Browder <tom.browder@gmail.com>
+This project started when I was trying to automate creating forms for
+my tax return. I have a need to generate multiple workbooks, one
+worksheet per workbook, from a template, and am designing my own
+format for that purpose. I will use the `Raku` language to parse the
+text-file template, then, with the aid of the `Raku` module
+`Inline::Perl5`, I will read my xslx data files with one of the Perl
+xslx readers and then use this module to write new, filtered files in
+the form of the template.
 
-## COPYRIGHT AND LICENSE
+I am just starting, but I'm looking at a template format something like
+this, one line per row, cells separated by pipes (`|`), key/value
+attribute pairs (using a syntax similar to `Raku`) following the cell content:
 
-Copyright 2020 Tom Browder
+``` Raku
+# This is a comment. The following row describes one xslx row with four columns (the
+# first column being empty) and it has an ending comment.
+# Comments are stripped to the end-of-line eol before parsing the row.
 
-This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
+| some text | 5.26 | ="some formula" :color(red) :width(2) # comment...
 
+# empty rows are ignored, the worksheet will have all rows padded with empty cells
+# to the maximum number of cells found on any row
+
+# another comment and more rows following
+|  # this is a row with two empty cells
+```
+
+AUTHOR
+======
+
+Tom Browder, `<tom.browder@gmail.com>`
+
+COPYRIGHT & LICENSE
+===================
+
+Copyright (c) 2020 Tom Browder, all rights reserved.
+
+This program is free software; you can redistribute it or modify
+it under the same terms as Perl 6 itself.
+
+See that license [here](./LICENSE).
