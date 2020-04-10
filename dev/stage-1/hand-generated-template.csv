@@ -1,5 +1,6 @@
-Title,,
-,proceeds,:value()
-,cost,:value()
+﻿Title,:text(),
 ,,
-,gain/loss,:formula(=c2+c3)
+,proceeds,:number(0.00)
+,cost,:number(0.00)
+,,
+,gain/loss,:formula(=c3-c4) :number(0.00) :color(yellow)
