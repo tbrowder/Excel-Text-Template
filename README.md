@@ -2,15 +2,14 @@
 
 # Excel::Text::Template
 
-Use a text template to generate an 'Excel'
-'.xlsx' file
+Use a text template to generate an `Excel` `*.xlsx` file
 
 ## DESCRIPTION
 
 This module provides the capability of using a text template
 to generate an Excel file. It is a WIP and has no working code
 at the moment. If you are interested in the concept, please
-star the project , follow it, and file an issue.
+star the project, follow it, and file a feature request issue.
 
 The project will use several Perl modules which will have to
 be installed for the distro to work (I use `cpanm` for that):
@@ -49,10 +48,13 @@ attribute pairs (using a syntax similar to `Raku`) following the cell content:
 |  # this is a row with two empty cells
 ```
 
+I plan to use `Raku`'s grammar to parse the template file.
+
+
 AUTHOR
 ======
 
-Tom Browder, `<tom.browder@gmail.com>`
+Tom Browder, `<tom.browder@gmail.com>` (`tbrowder` on IRC `#raku`)
 
 COPYRIGHT & LICENSE
 ===================
