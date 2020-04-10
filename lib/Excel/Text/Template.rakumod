@@ -1,3 +1,1 @@
-unit class Excel::Text::Template;
-
-
+unit class Excel::Text::Template:ver<0.0.1>;

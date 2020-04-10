@@ -5,19 +5,21 @@
   ],
   "build-depends" : [ ],
   "depends" : [
-      "Inline::Perl5"
+    "Inline::Perl5"
   ],
-  "description" : "blah blah blah",
+  "description" : "Provides ability to create an Excel file from a text template",
   "license" : "Artistic-2.0",
   "name" : "Excel::Text::Template",
   "perl" : "6.c",
   "provides" : {
-    "Excel::Text::Template" : "lib/Excel/Text/Template.rakumod"
+      "Excel::Text::Template" : "lib/Excel/Text/Template.rakumod",
+      "Excel::Text::Grammar"  : "lib/Excel/Text/Grammar.rakumod"
   },
   "resources" : [ ],
-  "source-url" : "",
+  "source-url" : "https://github.com/tbrowder/Excel-Text-Template-Raku.git",
   "tags" : [ ],
-  "test-depends" : [
-  ],
-  "version" : "0.0.0"
+    "test-depends" : [
+	"Test::META"
+    ],
+  "version" : "0.0.1"
 }
