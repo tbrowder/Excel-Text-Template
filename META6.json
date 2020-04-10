@@ -1,0 +1,23 @@
+{
+  "auth" : "github:tbrowder",
+  "authors" : [
+    "Tom Browder"
+  ],
+  "build-depends" : [ ],
+  "depends" : [ 
+      "Inline::Perl5"
+  ],
+  "description" : "blah blah blah",
+  "license" : "Artistic-2.0",
+  "name" : "Excel::Text::Template",
+  "perl" : "6.c",
+  "provides" : {
+    "Excel::Text::Template" : "lib/Excel/Text/Template.rakumod"
+  },
+  "resources" : [ ],
+  "source-url" : "",
+  "tags" : [ ],
+  "test-depends" : [ 
+  ],
+  "version" : "0.0.1"
+}
