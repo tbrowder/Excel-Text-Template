@@ -16,7 +16,7 @@ be installed for the distro to work (I use `cpanm` for that):
 
 + Perl modules required:
 
-    + `Excel::Writer::XSLX`
+    + `Excel::Writer::XLSX`
     + `Spreadsheet::XLSX`
 
 ## GENESIS
@@ -26,8 +26,8 @@ my tax return. I have a need to generate multiple workbooks, one
 worksheet per workbook, from a template, and am designing my own
 format for that purpose. I will use the `Raku` language to parse the
 text-file template, then, with the aid of the `Raku` module
-`Inline::Perl5`, I will read my xslx data files with one of the Perl
-xslx readers and then use this module to write new, filtered files in
+`Inline::Perl5`, I will read my xlsx data files with one of the Perl
+xlsx readers and then use this module to write new, filtered files in
 the form of the template.
 
 I am just starting, but I'm looking at a template format something like
@@ -35,7 +35,7 @@ this, one line per row, cells separated by pipes (`|`), key/value
 attribute pairs (using a syntax similar to `Raku`) following the cell content:
 
 ``` Raku
-# This is a comment. The following row describes one xslx row with four columns (the
+# This is a comment. The following row describes one xlsx row with four columns (the
 # first column being empty) and it has an ending comment.
 # Comments are stripped to the end-of-line eol before parsing the row.
 

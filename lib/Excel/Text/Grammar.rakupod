@@ -1,4 +1,7 @@
 unit module Excel::Text::Grammar:ver<0.0.1>;
 
 grammar TxtTmpl {
+    rule TOP {
+        .*
+    }
 }
