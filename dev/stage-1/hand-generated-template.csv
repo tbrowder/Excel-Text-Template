@@ -1,0 +1,5 @@
+Title,,
+,proceeds,:value()
+,cost,:value()
+,,
+,gain/loss,:formula(=c2+c3)
