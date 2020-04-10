@@ -32,12 +32,16 @@ if !@*ARGS.elems {
     exit;
 }
 
+my $debug = 0;
 for @*ARGS {
     when /^ '-i=' (\S*) $/ {
         $ifil = ~$0;
     }
     when /^ '-o=' (\S*) $/ {
         $ofil = ~$0;
+    }
+    when /^ d $/ {
+        $debug = 1;
     }
 }
 
@@ -64,10 +68,25 @@ elsif $ofil !~~ /'.xlsx' $/ {
     exit;
 }
 
-note "DEBUG: in '$ifil'; out '$ofil'...exiting"; exit;
-
-{
-    # initial flow test
-    my $ws = Excel::Writer::XLSX.new: $ofil
-
+if $debug {
+    note "DEBUG: in '$ifil'; out '$ofil'...exiting";
+    exit;
 }
+
+# initial flow test
+# read input
+my $wb = Spreadsheet::XLSX.new: $ifil;
+my $ws = @($wb<Worksheet>)[0];
+my $wsn = $ws<Name>;
+say "Sheet name: $wsn";
+$ws<MaxRow> ||= $ws<MinRow>;
+for $ws<MinRow> .. $ws<MaxRow> -> $row {
+    $ws<MaxCol> ||= $ws<MinCol>;
+    for $ws<MinCol> .. $ws<MaxCol> -> $col {
+        my $cell = $ws<Cells>[$row][$col];
+        if $cell {
+            say "($row, $col) => {$cell<Val>}";
+        }
+    }
+}
+
