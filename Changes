@@ -2,5 +2,8 @@ Revision history for Excel-Text-Template
 
 {{$NEXT}}
 
+0.0.2  2020-04-11T05:27:18-05:00
+    - module declared obsolete, replaced by module Excel
+
 0.0.1  2020-04-10T07:56:33-05:00
     - initial release (no working code)
