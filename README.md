@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.com/tbrowder/Excel-Text-Template-Raku.svg?branch=master)](https://travis-ci.com/tbrowder/Excel-Text-Template-Raku)
 
+# THIS MODULE IS DEPRECATED. IT HAS BEEN REPLACED BY MODULE "Excel"
+
 # Excel::Text::Template
 
 Use a text template to generate an `Excel` `*.xlsx` file
